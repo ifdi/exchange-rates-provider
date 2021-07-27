@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+    rabbitmq:
+        image: rabbitmq:3.9.0
+        container_name: rabbitmq
+        ports:
+            - 5672:5672
+    db:
+        image: postgres:13.3
+        container_name: xrp-postgres
+        ports:
+            - 5432:5432
+        environment:
+            - POSTGRES_USER=xrp
+            - POSTGRES_PASSWORD=p0stgres~
+volumes:
+    sonarqube_conf:
+    sonarqube_data:
